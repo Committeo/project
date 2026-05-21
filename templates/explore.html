@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Explore Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <h2>📚 BookAI</h2>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/explore">Explore</a>
+    </nav>
+</header>
+
+<section class="explore-header">
+    <h1>Find Your Next Read</h1>
+    <p>Tell us one book you loved & your mood</p>
+</section>
+
+<!-- RECOMMENDER -->
+<form method="POST" class="search-box">
+    <input type="text" name="book" placeholder="Enter book you liked" required>
+
+    <select name="mood">
+        <option value="">Any Mood</option>
+        <option value="happy">😊 Happy</option>
+        <option value="sad">😢 Sad</option>
+        <option value="thriller">🕵️ Thriller</option>
+        <option value="motivational">🔥 Motivational</option>
+    </select>
+
+    <button type="submit">Recommend</button>
+</form>
+
+<!-- RESULTS -->
+<div class="results">
+    {% for book in recommendations %}
+    <div class="card">
+        <h3>{{ book.title }}</h3>
+        <p>✍ {{ book.author }}</p>
+        <p>📅 {{ book.year }}</p>
+        <p>🏢 {{ book.publisher }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- EXTRA CONTENT -->
+<section class="reading-section">
+    <img src="{{ url_for('static', filename='images/reading.jpg') }}">
+    <div>
+        <h2>Why Reading Matters?</h2>
+        <p>Reading improves focus, vocabulary, and imagination.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 BookAI | AI Powered Reading</p>
+</footer>
+
+</body>
+</html>

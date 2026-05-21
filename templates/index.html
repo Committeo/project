@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AI Book Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+    <h2>📚 BookAI</h2>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/explore">Explore</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text glass">
+        <h1>Discover Books You’ll Love</h1>
+        <p>AI-powered recommendations based on your mood & taste.</p>
+        <a href="/explore" class="btn">Explore Books</a>
+    </div>
+
+    <img src="{{ url_for('static', filename='images/main.jpg') }}" alt="Books" class="glass-img">
+</section>
+
+
+<!-- FEATURES -->
+<section class="features">
+    <div class="feature-card">
+        📖 <h3>Smart Recommendations</h3>
+        <p>AI analyzes your interests & reading style.</p>
+    </div>
+    <div class="feature-card">
+        😊 <h3>Mood Based</h3>
+        <p>Happy, Sad, Thriller or Motivational.</p>
+    </div>
+    <div class="feature-card">
+        ⚡ <h3>Fast & Simple</h3>
+        <p>Just enter one book and get results.</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 BookAI | Designed by Rutuja</p>
+</footer>
+
+</body>
+</html>
